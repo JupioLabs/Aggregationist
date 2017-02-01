@@ -1,0 +1,2 @@
+C:\projects\aggregationist\obj\Debug\Aggregationist.njsprojResolveAssemblyReference.cache
+C:\projects\aggregationist\bin\Microsoft.NodejsTools.WebRole.dll

@@ -19,11 +19,11 @@ var menuItems = require('./config/menuItems');
 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/EquatorDB');
+mongoose.connect('mongodb://ag_admin:8HsZBHSsBFy9q7p7@ds056419.mlab.com:56419/aggregationist');
 
 var store = new MongoDBStore(
     {
-        uri: 'mongodb://localhost/EquatorDB',
+        uri: 'mongodb://ag_admin:8HsZBHSsBFy9q7p7@ds056419.mlab.com:56419/aggregationist',
         collection: 'Sessions'
     }
 );

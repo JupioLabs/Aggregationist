@@ -6,7 +6,7 @@ class HeaderContent extends React.Component {
             <head>
                 <title>{this.props.title}</title>
                 <link rel="stylesheet" type="text/css" href="/css/fonts.min.css" />
-                <link rel="stylesheet" type="text/css" href="/css/moneris.min.css" />
+                <link rel="stylesheet" type="text/css" href="/css/main.min.css" />
                 <script
                     src="https://code.jquery.com/jquery-3.1.1.min.js"
                     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
