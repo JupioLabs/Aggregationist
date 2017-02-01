@@ -1,0 +1,122 @@
+﻿.off-canvas-wrapper {
+    .off-canvas-content {
+        min-height: 100vh;
+    }
+}
+.off-canvas {
+    &.position-left {
+        hr {
+            margin: 10px 10px;
+        }
+    }
+    /*min-height: 100%;*/
+    color: white;
+    p {
+        a {
+            color: white;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: lightgray;
+        }
+    }
+    
+    .profile-panel {
+        hr {
+            margin: 0.75rem 0;
+        }
+    }
+    hr.no-margin {
+        margin: 0;
+    }
+    small{
+        color: white;
+    }
+    label {
+        color: white;
+    }
+    .portal-switcher{
+        color: white;
+        font-family: TheMixB2ExtraLight;
+        margin: 0.75rem 10px;
+        padding: 0.5rem;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 3px;
+        img {
+            max-height: 1rem;
+        }
+        ul {
+            
+            li {
+                a {
+                   font-family: AvenirLT-Medium;
+                   font-weight: normal;
+                   padding: 0.5rem 0;
+                }
+            }
+        }
+    }
+    .search-pane {
+        margin: 0.75rem 10px;
+        input[type=text] {
+            font-family: AvenirLT-Light;
+            font-weight: normal;
+        }
+    }
+    hr {
+            margin: 0 10px;
+            padding: 0;
+        }
+    
+    .sidemenu-header {
+        font-family: Consolas, monospace;
+        font-size: 1.25rem;
+        font-weight: bolder;
+        color: white;
+        text-align: center;
+        margin: 24px 0;
+    }
+    .is-accordion-submenu-parent > a::after {
+        border-color: #ffffff transparent transparent;
+    }
+    ul {
+        hr {
+            margin: 0 10px;
+            padding: 0;
+        }
+        li {
+            a {
+                color: white;
+                font-family: TheMixB6SemiBold;
+                font-weight: normal;
+            }
+            a:hover {
+                color: $light-gray;
+            }
+            a:focus {
+                color: $light-gray;
+            }
+            ul.nested {
+                a {
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                    color: white;
+                    font-family: AvenirLT-Light;
+                    font-weight: normal;
+                }
+                a:hover {
+                    color: $light-gray;
+                }
+                a:focus {
+                    color: $light-gray;
+                }
+            }
+            ul.menu.vertical.root-level {
+                li~li {
+                    border-top: 1px solid white;
+                }
+            }
+        }
+    }
+}

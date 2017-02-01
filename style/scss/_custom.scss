@@ -1,0 +1,9 @@
+@import 'settings';
+/* Should not use:
+@import 'components/offcanvas';
+@import 'components/topbar';
+*/
+
+main {
+    margin: 2.5rem 0;
+}

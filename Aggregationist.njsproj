@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Aggregationist</Name>
+    <RootNamespace>DPAdminTool</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>92ab169f-9c20-4cc8-b1c6-88bd534cb830</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>bin\www</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="config\dbs\example.js" />
+    <Compile Include="config\menuItems.js" />
+    <Compile Include="config\passport\init.js" />
+    <Compile Include="config\passport\login.js" />
+    <Compile Include="config\passport\signup.js" />
+    <Compile Include="middleware\registerUser.js" />
+    <Compile Include="middleware\validateUser.js" />
+    <Compile Include="models\communityModels\aspnet_Membership.js" />
+    <Compile Include="models\communityModels\aspnet_Paths.js" />
+    <Compile Include="models\communityModels\aspnet_PersonalizationAllUsers.js" />
+    <Compile Include="models\communityModels\aspnet_PersonalizationPerUser.js" />
+    <Compile Include="models\communityModels\aspnet_Profile.js" />
+    <Compile Include="models\communityModels\aspnet_Roles.js" />
+    <Compile Include="models\communityModels\aspnet_SchemaVersions.js" />
+    <Compile Include="models\communityModels\aspnet_Users.js" />
+    <Compile Include="models\communityModels\aspnet_UsersInRoles.js" />
+    <Compile Include="models\communityModels\aspnet_WebEvent_Events.js" />
+    <Compile Include="models\communityModels\cs_AddonConfigurationData.js" />
+    <Compile Include="models\communityModels\cs_ApiKeys.js" />
+    <Compile Include="models\communityModels\cs_ApplicationConfigurationSettings.js" />
+    <Compile Include="models\communityModels\cs_BannedAddresses.js" />
+    <Compile Include="models\communityModels\cs_BannedNetworks.js" />
+    <Compile Include="models\communityModels\cs_Censorship.js" />
+    <Compile Include="models\communityModels\cs_ConfiguredContentFragments.js" />
+    <Compile Include="models\communityModels\cs_Content.js" />
+    <Compile Include="models\communityModels\cs_ContentFragmentPages.js" />
+    <Compile Include="models\communityModels\cs_ContentFragmentTabs.js" />
+    <Compile Include="models\communityModels\cs_DisallowedNames.js" />
+    <Compile Include="models\communityModels\cs_EnabledContentFragments.js" />
+    <Compile Include="models\communityModels\cs_EventDescriptions.js" />
+    <Compile Include="models\communityModels\cs_EventLog.js" />
+    <Compile Include="models\communityModels\cs_Exceptions.js" />
+    <Compile Include="models\communityModels\cs_Exceptions_AffectedTypes.js" />
+    <Compile Include="models\communityModels\cs_FeaturedContent.js" />
+    <Compile Include="models\communityModels\cs_FeedState.js" />
+    <Compile Include="models\communityModels\cs_Followers.js" />
+    <Compile Include="models\communityModels\cs_FriendRequests.js" />
+    <Compile Include="models\communityModels\cs_Friends_xref.js" />
+    <Compile Include="models\communityModels\cs_GroupMembers.js" />
+    <Compile Include="models\communityModels\cs_GroupRoleMembers.js" />
+    <Compile Include="models\communityModels\cs_GroupRoots.js" />
+    <Compile Include="models\communityModels\cs_Groups.js" />
+    <Compile Include="models\communityModels\cs_Groups_ContactRequests.js" />
+    <Compile Include="models\communityModels\cs_Groups_GroupTags.js" />
+    <Compile Include="models\communityModels\cs_Groups_Tags.js" />
+    <Compile Include="models\communityModels\cs_InkData.js" />
+    <Compile Include="models\communityModels\cs_LegacyApplicationKeys.js" />
+    <Compile Include="models\communityModels\cs_Licenses.js" />
+    <Compile Include="models\communityModels\cs_Licenses_Servers.js" />
+    <Compile Include="models\communityModels\cs_LinkCategories.js" />
+    <Compile Include="models\communityModels\cs_Links.js" />
+    <Compile Include="models\communityModels\cs_Messaging_ConversationMessages.js" />
+    <Compile Include="models\communityModels\cs_Messaging_ConversationParticipants.js" />
+    <Compile Include="models\communityModels\cs_Messaging_Conversations.js" />
+    <Compile Include="models\communityModels\cs_Messaging_CurrentGroupActivityMessages.js" />
+    <Compile Include="models\communityModels\cs_Messaging_CurrentUserStatusMessages.js" />
+    <Compile Include="models\communityModels\cs_Messaging_GroupMessages.js" />
+    <Compile Include="models\communityModels\cs_Messaging_MessageReplies.js" />
+    <Compile Include="models\communityModels\cs_Messaging_Messages.js" />
+    <Compile Include="models\communityModels\cs_Messaging_ProfileMessages.js" />
+    <Compile Include="models\communityModels\cs_NodeOwners.js" />
+    <Compile Include="models\communityModels\cs_Nodes.js" />
+    <Compile Include="models\communityModels\cs_NodeTypes.js" />
+    <Compile Include="models\communityModels\cs_posts_deleted_archive.js" />
+    <Compile Include="models\communityModels\cs_Profile_FieldChoices.js" />
+    <Compile Include="models\communityModels\cs_Profile_Fields.js" />
+    <Compile Include="models\communityModels\cs_Profile_FieldTypes.js" />
+    <Compile Include="models\communityModels\cs_Profile_GroupFields.js" />
+    <Compile Include="models\communityModels\cs_Profile_Groups.js" />
+    <Compile Include="models\communityModels\cs_Profile_UserData.js" />
+    <Compile Include="models\communityModels\cs_Ranks.js" />
+    <Compile Include="models\communityModels\cs_Referrals.js" />
+    <Compile Include="models\communityModels\cs_Reports.js" />
+    <Compile Include="models\communityModels\cs_RoleQuotas.js" />
+    <Compile Include="models\communityModels\cs_SchemaVersion.js" />
+    <Compile Include="models\communityModels\cs_Search_Queue.js" />
+    <Compile Include="models\communityModels\cs_Security_Actions.js" />
+    <Compile Include="models\communityModels\cs_Security_EffectivePermissions.js" />
+    <Compile Include="models\communityModels\cs_Security_GroupTypePermissionTemplates.js" />
+    <Compile Include="models\communityModels\cs_Security_NodePermissions.js" />
+    <Compile Include="models\communityModels\cs_Security_NodeTypePermissionActions.js" />
+    <Compile Include="models\communityModels\cs_Security_NodeTypePermissions.js" />
+    <Compile Include="models\communityModels\cs_Security_Permissions.js" />
+    <Compile Include="models\communityModels\cs_Security_Roles.js" />
+    <Compile Include="models\communityModels\cs_Security_Roles_ADGroups.js" />
+    <Compile Include="models\communityModels\cs_Security_UserRoles.js" />
+    <Compile Include="models\communityModels\cs_SiteMappings.js" />
+    <Compile Include="models\communityModels\cs_Sites.js" />
+    <Compile Include="models\communityModels\cs_SiteSettings.js" />
+    <Compile Include="models\communityModels\cs_SiteTerms.js" />
+    <Compile Include="models\communityModels\cs_Smilies.js" />
+    <Compile Include="models\communityModels\cs_statistics_Site.js" />
+    <Compile Include="models\communityModels\cs_statistics_User.js" />
+    <Compile Include="models\communityModels\cs_Styles.js" />
+    <Compile Include="models\communityModels\cs_TagCounts_tbl01.js" />
+    <Compile Include="models\communityModels\cs_TagCounts_tbl02.js" />
+    <Compile Include="models\communityModels\cs_TemporaryUserTokens.js" />
+    <Compile Include="models\communityModels\cs_ThemeConfigurationData.js" />
+    <Compile Include="models\communityModels\cs_ThemeConfigurationData_TEMP.js" />
+    <Compile Include="models\communityModels\cs_UrlRedirects.js" />
+    <Compile Include="models\communityModels\cs_Urls.js" />
+    <Compile Include="models\communityModels\cs_UserInvitation.js" />
+    <Compile Include="models\communityModels\cs_UserProfile.js" />
+    <Compile Include="models\communityModels\cs_Users.js" />
+    <Compile Include="models\communityModels\cs_Users_OpenID.js" />
+    <Compile Include="models\communityModels\cs_vw_Security_NodeEffectiveActions.js" />
+    <Compile Include="models\communityModels\cs_vw_Security_SecuredNodes.js" />
+    <Compile Include="models\communityModels\cs_vw_Security_UserEffectiveActions.js" />
+    <Compile Include="models\communityModels\cs_vw_Security_UserEffectivePermissions.js" />
+    <Compile Include="models\communityModels\cs_vw_Users_FullUser.js" />
+    <Compile Include="models\communityModels\cs_Wiki_PageDailyStats.js" />
+    <Compile Include="models\communityModels\cs_Wiki_PageRevisions.js" />
+    <Compile Include="models\communityModels\cs_Wiki_Pages.js" />
+    <Compile Include="models\communityModels\cs_Wiki_Wikis.js" />
+    <Compile Include="models\communityModels\index.js" />
+    <Compile Include="models\communityModels\js_DbVersion.js" />
+    <Compile Include="models\communityModels\js_Jobs.js" />
+    <Compile Include="models\communityModels\mg_BulkEmailQueue.js" />
+    <Compile Include="models\communityModels\mg_EmailQueue.js" />
+    <Compile Include="models\communityModels\QRTZ_BLOB_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_CALENDARS.js" />
+    <Compile Include="models\communityModels\QRTZ_CRON_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_BLOB_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_CALENDARS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_CRON_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_FIRED_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_JOB_DETAILS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_JOB_LISTENERS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_LOCKS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_PAUSED_TRIGGER_GRPS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_SCHEDULER_STATE.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_SIMPLE_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_DYNAMIC_TRIGGER_LISTENERS.js" />
+    <Compile Include="models\communityModels\QRTZ_FIRED_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_JOB_DETAILS.js" />
+    <Compile Include="models\communityModels\QRTZ_JOB_LISTENERS.js" />
+    <Compile Include="models\communityModels\QRTZ_LOCKS.js" />
+    <Compile Include="models\communityModels\QRTZ_PAUSED_TRIGGER_GRPS.js" />
+    <Compile Include="models\communityModels\QRTZ_SCHEDULER_STATE.js" />
+    <Compile Include="models\communityModels\QRTZ_SIMPLE_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_TRIGGERS.js" />
+    <Compile Include="models\communityModels\QRTZ_TRIGGER_LISTENERS.js" />
+    <Compile Include="models\communityModels\sysdiagrams.js" />
+    <Compile Include="models\communityModels\telligent_Calendar.js" />
+    <Compile Include="models\communityModels\telligent_Calendar_CalendarContext.js" />
+    <Compile Include="models\communityModels\telligent_Calendar_Event.js" />
+    <Compile Include="models\communityModels\telligent_Calendar_EventComment.js" />
+    <Compile Include="models\communityModels\telligent_Calendar_EventNotification.js" />
+    <Compile Include="models\communityModels\telligent_Calendar_EventRegistration.js" />
+    <Compile Include="models\communityModels\telligent_Calendar_EventTags.js" />
+    <Compile Include="models\communityModels\telligent_Calendar_Tags.js" />
+    <Compile Include="models\communityModels\telligent_DocumentPreview_Files.js" />
+    <Compile Include="models\communityModels\telligent_Ideas_Challenges.js" />
+    <Compile Include="models\communityModels\telligent_Ideas_Ideas.js" />
+    <Compile Include="models\communityModels\telligent_Ideas_IdeaStatusHistory.js" />
+    <Compile Include="models\communityModels\telligent_Ideas_Status.js" />
+    <Compile Include="models\communityModels\telligent_Ideas_Votes.js" />
+    <Compile Include="models\communityModels\te_Achievement_Achievements.js" />
+    <Compile Include="models\communityModels\te_Achievement_UserAchievements.js" />
+    <Compile Include="models\communityModels\te_ActivityStream_Stories.js" />
+    <Compile Include="models\communityModels\te_ActivityStream_StoryActors.js" />
+    <Compile Include="models\communityModels\te_ActivityStream_StoryTypes.js" />
+    <Compile Include="models\communityModels\te_ActivityStream_StoryType_UserPreferences.js" />
+    <Compile Include="models\communityModels\te_ActivityStream_WebPreviews.js" />
+    <Compile Include="models\communityModels\te_Applications.js" />
+    <Compile Include="models\communityModels\te_Application_Posts.js" />
+    <Compile Include="models\communityModels\te_Application_Threads.js" />
+    <Compile Include="models\communityModels\te_Attachments.js" />
+    <Compile Include="models\communityModels\te_Attachments_Temp.js" />
+    <Compile Include="models\communityModels\te_Audit_ActionAudits.js" />
+    <Compile Include="models\communityModels\te_Audit_Actions.js" />
+    <Compile Include="models\communityModels\te_Blog_BlogContactRequests.js" />
+    <Compile Include="models\communityModels\te_Blog_BlogProperties.js" />
+    <Compile Include="models\communityModels\te_Blog_BlogRollerFeeds.js" />
+    <Compile Include="models\communityModels\te_Blog_BlogRollerPosts.js" />
+    <Compile Include="models\communityModels\te_Blog_BlogRollerUrls.js" />
+    <Compile Include="models\communityModels\te_Blog_Blogs.js" />
+    <Compile Include="models\communityModels\te_Blog_BlogSubscriptions.js" />
+    <Compile Include="models\communityModels\te_Blog_BlogUserTracking.js" />
+    <Compile Include="models\communityModels\te_Blog_ContentTokens.js" />
+    <Compile Include="models\communityModels\te_Blog_PostByYearMonth.js" />
+    <Compile Include="models\communityModels\te_Blog_PostDailyStats.js" />
+    <Compile Include="models\communityModels\te_Blog_PostProperties.js" />
+    <Compile Include="models\communityModels\te_Blog_Posts.js" />
+    <Compile Include="models\communityModels\te_Caching_Configurations.js" />
+    <Compile Include="models\communityModels\te_Comment_CommentProperties.js" />
+    <Compile Include="models\communityModels\te_Comment_Comments.js" />
+    <Compile Include="models\communityModels\te_Comment_Points.js" />
+    <Compile Include="models\communityModels\te_ContentFragmentContainers.js" />
+    <Compile Include="models\communityModels\te_ContentFragmentContainer_ConfiguredContentFragments.js" />
+    <Compile Include="models\communityModels\te_ContentFragmentScopedProperties.js" />
+    <Compile Include="models\communityModels\te_Content_AbuseAppeals.js" />
+    <Compile Include="models\communityModels\te_Content_AbuseExpungedData.js" />
+    <Compile Include="models\communityModels\te_Content_AbuseNotificationsSent.js" />
+    <Compile Include="models\communityModels\te_Content_AbuseReason.js" />
+    <Compile Include="models\communityModels\te_Content_AbuseReports.js" />
+    <Compile Include="models\communityModels\te_Content_AbusiveContent.js" />
+    <Compile Include="models\communityModels\te_Content_AbusiveContentDetails.js" />
+    <Compile Include="models\communityModels\te_Content_AbusiveContent_Ignored.js" />
+    <Compile Include="models\communityModels\te_Content_Applications.js" />
+    <Compile Include="models\communityModels\te_Content_ApplicationSubscriptions.js" />
+    <Compile Include="models\communityModels\te_Content_ApplicationTags.js" />
+    <Compile Include="models\communityModels\te_Content_ApplicationTypes.js" />
+    <Compile Include="models\communityModels\te_Content_ApplicationTypeTags.js" />
+    <Compile Include="models\communityModels\te_Content_ContainerRoots.js" />
+    <Compile Include="models\communityModels\te_Content_Containers.js" />
+    <Compile Include="models\communityModels\te_Content_Containers_EffectiveMembers.js" />
+    <Compile Include="models\communityModels\te_Content_ContainerTypes.js" />
+    <Compile Include="models\communityModels\te_Content_ContentDetails.js" />
+    <Compile Include="models\communityModels\te_Content_ContentLikeSummary.js" />
+    <Compile Include="models\communityModels\te_Content_ContentPermissions.js" />
+    <Compile Include="models\communityModels\te_Content_ContentRatingSummary.js" />
+    <Compile Include="models\communityModels\te_Content_Contents.js" />
+    <Compile Include="models\communityModels\te_Content_ContentSubscriptions.js" />
+    <Compile Include="models\communityModels\te_Content_ContentSubscriptions_Muted.js" />
+    <Compile Include="models\communityModels\te_Content_ContentTypes.js" />
+    <Compile Include="models\communityModels\te_Content_ContentUserBookmarks.js" />
+    <Compile Include="models\communityModels\te_Content_ContentUserLikes.js" />
+    <Compile Include="models\communityModels\te_Content_ContentUserRatings.js" />
+    <Compile Include="models\communityModels\te_Content_FeaturedContent.js" />
+    <Compile Include="models\communityModels\te_Content_FeaturedContentTarget.js" />
+    <Compile Include="models\communityModels\te_Content_Mentions.js" />
+    <Compile Include="models\communityModels\te_Content_NotificationDistributionProperties.js" />
+    <Compile Include="models\communityModels\te_Content_NotificationDistributions.js" />
+    <Compile Include="models\communityModels\te_Content_NotificationProperties.js" />
+    <Compile Include="models\communityModels\te_Content_Notifications.js" />
+    <Compile Include="models\communityModels\te_Content_NotificationsTemporaryStore.js" />
+    <Compile Include="models\communityModels\te_Content_Notifications_NotificationActors.js" />
+    <Compile Include="models\communityModels\te_Content_Notifications_NotificationTypes.js" />
+    <Compile Include="models\communityModels\te_Content_Notifications_UserPreferences.js" />
+    <Compile Include="models\communityModels\te_Content_Properties.js" />
+    <Compile Include="models\communityModels\te_Content_Recent.js" />
+    <Compile Include="models\communityModels\te_Content_Scoring_CalculatedMetrics.js" />
+    <Compile Include="models\communityModels\te_Content_Scoring_CalculatedScores.js" />
+    <Compile Include="models\communityModels\te_Content_Scoring_DecayOverrides.js" />
+    <Compile Include="models\communityModels\te_Content_Scoring_ScoreConfigurations.js" />
+    <Compile Include="models\communityModels\te_Content_Scoring_WeightedMetrics.js" />
+    <Compile Include="models\communityModels\te_Content_TaggedContent.js" />
+    <Compile Include="models\communityModels\te_Content_Tags.js" />
+    <Compile Include="models\communityModels\te_Content_Views.js" />
+    <Compile Include="models\communityModels\te_Content_ViewUrl.js" />
+    <Compile Include="models\communityModels\te_DistributedMonitor_Leases.js" />
+    <Compile Include="models\communityModels\te_DistributedVersioning.js" />
+    <Compile Include="models\communityModels\te_EmailDigest_Subscription.js" />
+    <Compile Include="models\communityModels\te_Email_ContentMessageIds.js" />
+    <Compile Include="models\communityModels\te_EmbeddedPolls_Option.js" />
+    <Compile Include="models\communityModels\te_EmbeddedPolls_Poll.js" />
+    <Compile Include="models\communityModels\te_EmbeddedPolls_Vote.js" />
+    <Compile Include="models\communityModels\te_EmbeddedPolls_VoteSummary.js" />
+    <Compile Include="models\communityModels\te_FileGallery_FileDailyStats.js" />
+    <Compile Include="models\communityModels\te_FileGallery_FileDownloads.js" />
+    <Compile Include="models\communityModels\te_FileGallery_FileGalleries.js" />
+    <Compile Include="models\communityModels\te_FileGallery_FileGalleryProperties.js" />
+    <Compile Include="models\communityModels\te_FileGallery_FileProperties.js" />
+    <Compile Include="models\communityModels\te_FileGallery_Files.js" />
+    <Compile Include="models\communityModels\te_Flags.js" />
+    <Compile Include="models\communityModels\te_Forum_ForumProperties.js" />
+    <Compile Include="models\communityModels\te_Forum_Forums.js" />
+    <Compile Include="models\communityModels\te_Forum_ForumsRead.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadDailyStats.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadEmbeddedUrls.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadProperties.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadReplies.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadReplyProperties.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadReplyVotes.js" />
+    <Compile Include="models\communityModels\te_Forum_Threads.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadsRead.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadVotes.js" />
+    <Compile Include="models\communityModels\te_Forum_ThreadWikiPages.js" />
+    <Compile Include="models\communityModels\te_GroupMembers_EffectiveMembers.js" />
+    <Compile Include="models\communityModels\te_Leaderboard_Leaderboards.js" />
+    <Compile Include="models\communityModels\te_Leaderboard_Leaders.js" />
+    <Compile Include="models\communityModels\te_MailingList_MailingListProperties.js" />
+    <Compile Include="models\communityModels\te_MailingList_MailingLists.js" />
+    <Compile Include="models\communityModels\te_MailingList_Messages.js" />
+    <Compile Include="models\communityModels\te_MultipleUploadFileManager_Contexts.js" />
+    <Compile Include="models\communityModels\te_OAuth_AuthorizationCodes.js" />
+    <Compile Include="models\communityModels\te_OAuth_Clients.js" />
+    <Compile Include="models\communityModels\te_OAuth_ClientUsers.js" />
+    <Compile Include="models\communityModels\te_OAuth_Links.js" />
+    <Compile Include="models\communityModels\te_PluginConfiguration.js" />
+    <Compile Include="models\communityModels\te_Plugins.js" />
+    <Compile Include="models\communityModels\te_Plugin_JobSchedules.js" />
+    <Compile Include="models\communityModels\te_Plugin_Translations.js" />
+    <Compile Include="models\communityModels\te_Plugin_Versions.js" />
+    <Compile Include="models\communityModels\te_Points_PointTransactions.js" />
+    <Compile Include="models\communityModels\te_Points_ScheduledRecalculateUserTotals.js" />
+    <Compile Include="models\communityModels\te_Points_TransactionTokens.js" />
+    <Compile Include="models\communityModels\te_Points_ZScore_Lookup.js" />
+    <Compile Include="models\communityModels\te_Profile_ExternalGroupFields.js" />
+    <Compile Include="models\communityModels\te_Recommendations_ContentSimilarity.js" />
+    <Compile Include="models\communityModels\te_Recommendations_IgnoredContentRecommendations.js" />
+    <Compile Include="models\communityModels\te_Recommendations_IgnoredUserRecommendations.js" />
+    <Compile Include="models\communityModels\te_Recommendations_ScheduledUserRecommendationRecalculations.js" />
+    <Compile Include="models\communityModels\te_Recommendations_UserRecommendations.js" />
+    <Compile Include="models\communityModels\te_Rule_RuleParts.js" />
+    <Compile Include="models\communityModels\te_Rule_Rules.js" />
+    <Compile Include="models\communityModels\te_Rule_RuleTriggers.js" />
+    <Compile Include="models\communityModels\te_ScriptedContentFragments.js" />
+    <Compile Include="models\communityModels\te_ScriptedContentFragment_Translations.js" />
+    <Compile Include="models\communityModels\te_SearchIndex_Applications.js" />
+    <Compile Include="models\communityModels\te_SearchIndex_Contents.js" />
+    <Compile Include="models\communityModels\te_StagedItems.js" />
+    <Compile Include="models\communityModels\te_TemporaryStore.js" />
+    <Compile Include="models\communityModels\te_Themes.js" />
+    <Compile Include="models\communityModels\te_TokenizedTemplates.js" />
+    <Compile Include="models\communityModels\te_TourTips.js" />
+    <Compile Include="models\communityModels\te_vw_Forum_Threads_Normalized.js" />
+    <Compile Include="models\communityModels\te_vw_HasReadForum.js" />
+    <Compile Include="models\communityModels\te_vw_JoinlessGroupMembers.js" />
+    <Compile Include="models\communityModels\te_vw_ModerationAction.js" />
+    <Compile Include="models\communityModels\te_vw_ModerationAudit.js" />
+    <Compile Include="models\communityModels\te_vw_PostAttachments.js" />
+    <Compile Include="models\communityModels\te_vw_PostRating.js" />
+    <Compile Include="models\communityModels\te_vw_Posts.js" />
+    <Compile Include="models\communityModels\te_vw_Posts_Downloads.js" />
+    <Compile Include="models\communityModels\te_vw_Posts_InCategories.js" />
+    <Compile Include="models\communityModels\te_vw_Post_Categories.js" />
+    <Compile Include="models\communityModels\te_vw_SectionMembers.js" />
+    <Compile Include="models\communityModels\te_vw_Sections.js" />
+    <Compile Include="models\communityModels\te_vw_SectionsRead.js" />
+    <Compile Include="models\communityModels\te_vw_Tags.js" />
+    <Compile Include="models\communityModels\te_vw_ThreadRating.js" />
+    <Compile Include="models\communityModels\te_vw_Threads.js" />
+    <Compile Include="models\communityModels\te_vw_WebAnalytics.js" />
+    <Compile Include="models\communityModels\te_WebAnalytics.js" />
+    <Compile Include="models\communityModels\te_WebHooks_Messages.js" />
+    <Compile Include="models\communityModels\te_WebHooks_Subscriptions.js" />
+    <Compile Include="models\communityModels\te_WebHooks_Urls.js" />
+    <Compile Include="models\communityModels\vw_aspnet_Applications.js" />
+    <Compile Include="models\communityModels\vw_aspnet_MembershipUsers.js" />
+    <Compile Include="models\communityModels\vw_aspnet_Profiles.js" />
+    <Compile Include="models\communityModels\vw_aspnet_Roles.js" />
+    <Compile Include="models\communityModels\vw_aspnet_Users.js" />
+    <Compile Include="models\communityModels\vw_aspnet_UsersInRoles.js" />
+    <Compile Include="models\communityModels\vw_aspnet_WebPartState_Paths.js" />
+    <Compile Include="models\communityModels\vw_aspnet_WebPartState_Shared.js" />
+    <Compile Include="models\communityModels\vw_aspnet_WebPartState_User.js" />
+    <Compile Include="models\communityModels\vw_v1_permissions_EffectivePermissions.js" />
+    <Compile Include="models\devPortalModels\applepay.js" />
+    <Compile Include="models\devPortalModels\attack_log.js" />
+    <Compile Include="models\devPortalModels\bans.js" />
+    <Compile Include="models\devPortalModels\dev_accesslog.js" />
+    <Compile Include="models\devPortalModels\dev_clicklog.js" />
+    <Compile Include="models\devPortalModels\dev_custom.js" />
+    <Compile Include="models\devPortalModels\dev_favourites.js" />
+    <Compile Include="models\devPortalModels\dev_favourites_v2.js" />
+    <Compile Include="models\devPortalModels\dev_users.js" />
+    <Compile Include="models\devPortalModels\dev_user_keys.js" />
+    <Compile Include="models\devPortalModels\dev_user_login_attempts.js" />
+    <Compile Include="models\devPortalModels\dev_user_test_credentials.js" />
+    <Compile Include="models\devPortalModels\index.js" />
+    <Compile Include="models\devPortalModels\interacsolutions.js" />
+    <Compile Include="models\devPortalModels\password_reset.js" />
+    <Compile Include="models\devPortalModels\reporting_search.js" />
+    <Compile Include="models\devPortalModels\request_batchupload.js" />
+    <Compile Include="models\devPortalModels\request_customQAaccount.js" />
+    <Compile Include="models\devPortalModels\server_cstatus.js" />
+    <Compile Include="models\devPortalModels\server_cstatus_us.js" />
+    <Compile Include="models\devPortalModels\server_status.js" />
+    <Compile Include="models\devPortalModels\server_status_us.js" />
+    <Compile Include="models\devPortalModels\solutions.js" />
+    <Compile Include="models\devPortalModels\subscriptions.js" />
+    <Compile Include="models\exampleSQLModel\index.js" />
+    <Compile Include="models\local\user.js" />
+    <Compile Include="public\js\app\dist\userList.js" />
+    <Compile Include="public\js\axios.min.js" />
+    <Compile Include="public\js\es6-promise.auto.min.js" />
+    <Compile Include="public\js\react-dom.min.js" />
+    <Compile Include="public\js\react.min.js" />
+    <Compile Include="routes\api\api.js" />
+    <Compile Include="routes\auth\index.js" />
+    <Compile Include="routes\index.js" />
+    <Compile Include="bin\www" />
+    <Compile Include="style\gulpfile.js" />
+    <Compile Include="style\js\app\userList.js" />
+    <Content Include=".gitignore" />
+    <Content Include="public\data\mock_data.json" />
+    <Content Include="public\fonts\.gitkeep" />
+    <Content Include="public\fonts\2F6C71_0_0.eot" />
+    <Content Include="public\fonts\2F6C71_0_0.svg" />
+    <Content Include="public\fonts\2F6C71_1_0.eot" />
+    <Content Include="public\fonts\2F6C71_1_0.svg" />
+    <Content Include="public\fonts\2F6C71_2_0.eot" />
+    <Content Include="public\fonts\2F6C71_2_0.svg" />
+    <Content Include="public\fonts\2F6C71_3_0.eot" />
+    <Content Include="public\fonts\2F6C71_3_0.svg" />
+    <Content Include="public\fonts\2F6C71_4_0.eot" />
+    <Content Include="public\fonts\2F6C71_4_0.svg" />
+    <Content Include="public\fonts\2F6C71_5_0.eot" />
+    <Content Include="public\fonts\2F6C71_5_0.svg" />
+    <Content Include="public\fonts\2F6C71_6_0.eot" />
+    <Content Include="public\fonts\2F6C71_6_0.svg" />
+    <Content Include="public\fonts\2F6C71_7_0.eot" />
+    <Content Include="public\fonts\2F6C71_7_0.svg" />
+    <Content Include="public\fonts\2F6C71_8_0.eot" />
+    <Content Include="public\fonts\2F6C71_8_0.svg" />
+    <Content Include="public\fonts\2F6C71_9_0.eot" />
+    <Content Include="public\fonts\2F6C71_9_0.svg" />
+    <Content Include="public\fonts\2F6C71_A_0.eot" />
+    <Content Include="public\fonts\2F6C71_A_0.svg" />
+    <Content Include="public\fonts\2F6C71_B_0.eot" />
+    <Content Include="public\fonts\2F6C71_B_0.svg" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\fonts\ionicons.eot" />
+    <Content Include="public\fonts\ionicons.svg" />
+    <Content Include="public\fonts\ionicons.ttf" />
+    <Content Include="public\fonts\ionicons.woff" />
+    <Content Include="public\fonts\mico-icons.eot" />
+    <Content Include="public\fonts\mico-icons.svg" />
+    <Content Include="public\fonts\mico-icons.ttf" />
+    <Content Include="public\fonts\mico-icons.woff" />
+    <Content Include="public\fonts\themxb2_-webfont.eot" />
+    <Content Include="public\fonts\themxb2_-webfont.svg" />
+    <Content Include="public\fonts\themxb2_-webfont.ttf" />
+    <Content Include="public\fonts\themxb2_-webfont.woff" />
+    <Content Include="public\fonts\themxb4_.ttf" />
+    <Content Include="public\fonts\themxb5_-webfont.eot" />
+    <Content Include="public\fonts\themxb5_-webfont.svg" />
+    <Content Include="public\fonts\themxb5_-webfont.ttf" />
+    <Content Include="public\fonts\themxb5_-webfont.woff" />
+    <Content Include="public\fonts\themxb6_-webfont.eot" />
+    <Content Include="public\fonts\themxb6_-webfont.svg" />
+    <Content Include="public\fonts\themxb6_-webfont.ttf" />
+    <Content Include="public\fonts\themxb6_-webfont.woff" />
+    <Content Include="public\fonts\themxb7_-webfont.eot" />
+    <Content Include="public\fonts\themxb7_-webfont.svg" />
+    <Content Include="public\fonts\themxb7_-webfont.ttf" />
+    <Content Include="public\fonts\themxb7_-webfont.woff" />
+    <Content Include="public\fonts\thesanb6sembol-webfont.eot" />
+    <Content Include="public\fonts\thesanb6sembol-webfont.svg" />
+    <Content Include="public\fonts\thesanb6sembol-webfont.ttf" />
+    <Content Include="public\fonts\thesanb6sembol-webfont.woff" />
+    <Content Include="public\fonts\thesanb7bol-webfont.eot" />
+    <Content Include="public\fonts\thesanb7bol-webfont.svg" />
+    <Content Include="public\fonts\thesanb7bol-webfont.ttf" />
+    <Content Include="public\fonts\thesanb7bol-webfont.woff" />
+    <Content Include="public\fonts\thesans-5-regular-webfont.eot" />
+    <Content Include="public\fonts\thesans-5-regular-webfont.svg" />
+    <Content Include="public\fonts\thesans-5-regular-webfont.ttf" />
+    <Content Include="public\fonts\thesans-5-regular-webfont.woff" />
+    <Content Include="public\fonts\thesans-6-semibold-webfont.eot" />
+    <Content Include="public\fonts\thesans-6-semibold-webfont.svg" />
+    <Content Include="public\fonts\thesans-6-semibold-webfont.ttf" />
+    <Content Include="public\fonts\thesans-6-semibold-webfont.woff" />
+    <Content Include="public\fonts\thesans-b6semibold-webfont.eot" />
+    <Content Include="public\fonts\thesans-b6semibold-webfont.svg" />
+    <Content Include="public\fonts\thesans-b6semibold-webfont.ttf" />
+    <Content Include="public\fonts\thesans-b6semibold-webfont.woff" />
+    <Content Include="public\fonts\thesans-b7bold-webfont.eot" />
+    <Content Include="public\fonts\thesans-b7bold-webfont.svg" />
+    <Content Include="public\fonts\thesans-b7bold-webfont.ttf" />
+    <Content Include="public\fonts\thesans-b7bold-webfont.woff" />
+    <Content Include="public\fonts\TheSans_LP_300_Light.eot" />
+    <Content Include="public\fonts\TheSans_LP_300_Light.svg" />
+    <Content Include="public\fonts\TheSans_LP_300_Light.woff" />
+    <Content Include="package.json" />
+    <Content Include="public\js\axios.min.map" />
+    <Content Include="README.md" />
+    <Content Include="style\.babelrc" />
+    <Content Include="style\.gitignore" />
+    <Content Include="style\bower.json" />
+    <Content Include="style\package.json" />
+    <Content Include="style\scss\components\_fonts.scss" />
+    <Content Include="style\scss\components\_offcanvas.scss" />
+    <Content Include="style\scss\components\_topbar.scss" />
+    <Content Include="style\scss\fonts.scss" />
+    <Content Include="style\scss\main.scss" />
+    <Content Include="style\scss\_custom.scss" />
+    <Content Include="style\scss\_settings.scss" />
+    <Content Include="views\auth\register.jsx" />
+    <Content Include="views\auth\login.jsx" />
+    <Content Include="views\error.jsx" />
+    <Content Include="views\layouts\default.jsx" />
+    <Content Include="views\index.jsx" />
+    <Content Include="views\shared\head.jsx" />
+    <Content Include="views\shared\nav.jsx" />
+    <Content Include="views\shared\topbar.jsx" />
+    <Content Include="views\articles\index.jsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="config\dbs\" />
+    <Folder Include="config\passport\" />
+    <Folder Include="controllers\" />
+    <Folder Include="models\communityModels\" />
+    <Folder Include="models\devPortalModels\" />
+    <Folder Include="models\exampleSQLModel\" />
+    <Folder Include="public\data\" />
+    <Folder Include="public\fonts\" />
+    <Folder Include="models\" />
+    <Folder Include="middleware\" />
+    <Folder Include="config\" />
+    <Folder Include="models\local\" />
+    <Folder Include="public\" />
+    <Folder Include="public\img\" />
+    <Folder Include="public\js\" />
+    <Folder Include="public\js\app\" />
+    <Folder Include="public\js\app\dist\" />
+    <Folder Include="routes\auth\" />
+    <Folder Include="routes\api\" />
+    <Folder Include="style\" />
+    <Folder Include="public\css\" />
+    <Folder Include="routes\" />
+    <Folder Include="style\css\" />
+    <Folder Include="style\css\dist\" />
+    <Folder Include="style\js\" />
+    <Folder Include="style\js\app\" />
+    <Folder Include="style\js\dist\" />
+    <Folder Include="style\scss\" />
+    <Folder Include="style\scss\components\" />
+    <Folder Include="views\" />
+    <Folder Include="views\layouts\" />
+    <Folder Include="views\auth\" />
+    <Folder Include="views\articles\" />
+    <Folder Include="views\shared\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
